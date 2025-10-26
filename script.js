@@ -17,9 +17,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     return;
   }
 
-  // If all okay, show success and reset form
-  alert('Thank you for your message! I will get back to you soon.');
-  this.reset();
 });
 
 // Typing Effect
