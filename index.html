@@ -211,15 +211,34 @@
 </section>
 
   <!-- Contact -->
-  <section class="contact animate-on-scroll">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <section class="contact" id="contact">
+  <h2 class="section-title">Contact <span>Me</span></h2>
+  <p class="section-subtitle">Get in Touch</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="contact-form">
+    <input type="hidden" name="access_key" value="a4218bd4-794e-4e5d-a448-e7b697e9c0bf">
+
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <textarea type="number" placeholder="Your Whatsapp..." required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <textarea name="message" placeholder="Your Message..." required></textarea>
+    </div>
+        
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <!--<p id="form-status" class="status-msg"></p>-->
+</section>
+
 
   <!-- Footer -->
   <footer>
