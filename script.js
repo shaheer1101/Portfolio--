@@ -9,7 +9,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     alert('Please fill in all fields.');
     return;
   }
-  
 
   // Simple email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -17,7 +16,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     alert('Please enter a valid email.');
     return;
   }
-this.reset();
+
+  this.reset();
 });
 
 // Typing Effect
@@ -252,50 +252,3 @@ style.innerHTML = `
   to {opacity: 1; transform: scale(1);}
 }`;
 document.head.appendChild(style);
-  });
-
-  // Swipe functionality
-  let startX = 0;
-  let endX = 0;
-
-  const flipBook = card.querySelector('.flip-book');
-
-  flipBook.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-
-  flipBook.addEventListener('touchmove', e => {
-    endX = e.touches[0].clientX;
-  });
-
-  flipBook.addEventListener('touchend', e => {
-    const diff = endX - startX;
-    if (diff > 50) showPage((current - 1 + pages.length) % pages.length); // swipe right
-    else if (diff < -50) showPage((current + 1) % pages.length); // swipe left
-  });
-
-  // Optional: Mouse drag support
-  let isDragging = false;
-  let dragStartX = 0;
-
-  flipBook.addEventListener('mousedown', e => {
-    isDragging = true;
-    dragStartX = e.clientX;
-  });
-
-  flipBook.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    endX = e.clientX;
-  });
-
-  flipBook.addEventListener('mouseup', e => {
-    if (!isDragging) return;
-    isDragging = false;
-    const diff = endX - dragStartX;
-    if (diff > 50) showPage((current - 1 + pages.length) % pages.length);
-    else if (diff < -50) showPage((current + 1) % pages.length);
-  });
-
-  flipBook.addEventListener('mouseleave', () => { isDragging = false; });
-});
-          
