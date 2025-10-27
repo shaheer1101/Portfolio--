@@ -9,6 +9,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     alert('Please fill in all fields.');
     return;
   }
+  
 
   // Simple email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,7 +17,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     alert('Please enter a valid email.');
     return;
   }
-
+this.reset();
 });
 
 // Typing Effect
